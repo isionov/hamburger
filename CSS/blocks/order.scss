@@ -1,0 +1,85 @@
+.order{
+  background: url('../img/bg/bg_order.jpg') center center / cover no-repeat;
+  color: #fff;
+  font-size: 14px;
+  @include ubuntu(light);
+  line-height: 1.42;
+}
+
+.form__input{
+  font-size: 14px;
+  @include ubuntu(light);
+  line-height: 1.42;
+  border-width: 2px;
+  border-color: transparent;
+  border-radius: 5px;
+  padding: 8px 20px;
+  width: 100%;
+  &:focus{
+    border-color: #f9b43b;
+    outline-color: transparent;
+  }
+}
+
+.form__row{
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.form__block{
+  flex: 1;
+  margin-right: 20px;
+  &:last-child{
+    margin-right: 0;
+  }
+}
+
+.column__wrap{
+  display: flex;
+}
+
+.form__column{
+  flex: 1;
+  margin-right: 20px;
+  &:last-child{
+    margin-right: 0;
+  }
+}
+
+.form__tarea{
+  font-size: 14px;
+  @include ubuntu(light);
+  line-height: 1.42;
+  width: 100%;
+  height: 118px;
+  border-width: 2px;
+  border-color: transparent;
+  border-radius: 5px;
+  padding: 8px 20px;
+  &:focus{
+    border-color: #f9b43b;
+    outline-color: transparent;
+  }
+}
+
+// .form-radio{
+//   margin-bottom: 25px;
+// }
+
+.radio{
+  margin-right: 20px;
+  &:last-child{
+    margin-right: 0px;
+  }
+}
+
+.btn--clear{
+  outline-color: transparent;
+  border: transparent;
+  font-size: 14px;
+  @include ubuntu(medium);
+  margin-right: 5px;
+  &:last-child{
+    margin-right: 0px;
+  }
+}

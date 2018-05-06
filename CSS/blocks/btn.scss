@@ -1,0 +1,11 @@
+.btn{
+  padding: 5px 15px;
+  background-color: $orange;
+  display: block;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #fff;
+  @include ubuntu(medium);
+  font-size: 13px;
+  text-transform: uppercase;
+}

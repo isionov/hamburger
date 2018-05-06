@@ -1,0 +1,33 @@
+.hero{
+  background: url("../img/bg/bg1.jpg") center center / cover no-repeat;
+}
+
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero__container{
+  flex: 0.9;
+  align-items: center;
+  display: flex;
+}
+
+.hero__inner-container{
+  justify-content: flex-start;
+}
+.hero__content{
+  display: flex;
+  align-items: center;
+}
+
+.hero__burger{
+  max-width: 95%;
+}
+
+.hero__content-desc{
+  @include lifehack();
+  font-size: 65px;
+  color: #fff;
+}

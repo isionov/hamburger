@@ -1,0 +1,97 @@
+@font-face {
+  font-family: 'lifehack';
+  src: url('../fonts/lifehack_medium-webfont.woff2') format('woff2'),
+       url('../fonts/lifehack_medium-webfont.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: block;
+}
+
+
+
+
+@font-face {
+  font-family: 'ubuntu';
+  src: url('../fonts/ubuntu-b-webfont.woff2') format('woff2'),
+       url('../fonts/ubuntu-b-webfont.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: fallback;
+}
+
+
+
+
+@font-face {
+  font-family: 'ubuntu';
+  src: url('../fonts/ubuntu-light-webfont.woff2') format('woff2'),
+       url('../fonts/ubuntu-light-webfont.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: fallback;
+}
+
+
+
+
+@font-face {
+  font-family: 'ubuntu';
+  src: url('../fonts/ubuntu-medium-webfont.woff2') format('woff2'),
+       url('../fonts/ubuntu-medium-webfont.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: fallback;
+}
+
+
+
+
+@font-face {
+  font-family: 'ubuntu';
+  src: url('../fonts/ubuntu-regular-webfont.woff2') format('woff2'),
+       url('../fonts/ubuntu-regular-webfont.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display :fallback;
+}
+
+
+
+
+@font-face {
+  font-family: 'gagalinregular';
+  src: url('../fonts/gagalin-regular-webfont.woff2') format('woff2'),
+       url('../fonts/gagalin-regular-webfont.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
+
+@mixin gagalin() {
+	font-family: 'gagalinregular', Helvetica, sans-serif;
+}
+
+@mixin ubuntu($style: light) {
+	font-family: 'ubuntu', Helvetica, sans-serif;
+
+	@if $style == light {
+		font-weight: 300;
+  }
+  
+  @if $style == regular {
+		font-weight: 400;
+	}
+
+	@if $style == medium {
+		font-weight: 500;
+	}
+
+	@if $style == bold {
+		font-weight: 700;
+	}
+}
+
+@mixin lifehack() {
+	font-family: 'lifehack';
+}

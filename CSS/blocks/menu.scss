@@ -1,0 +1,89 @@
+.menu{
+  background: url('../img/bg/bg_menu.jpg') center center / cover no-repeat;
+  position: relative;
+}
+
+.container--menu{
+  flex-direction: row;
+  justify-content: space-between;
+  position: static;
+}
+
+.section__title--menu{
+  color: #fff;
+  padding-top: 100px;
+}
+
+.menu__list{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  overflow: hidden;
+  &-elem{
+    display: flex;
+    &--active{
+      .menu__list-content{
+        width: 540px;
+      }
+      .menu__list-title{
+        color: $yellow;
+      }
+    }
+  }
+}
+
+.menu__list-title{
+  @include gagalin();
+  font-size: 40px;
+  line-height: 2;
+  color: #fff;
+  text-transform: uppercase;
+  position: relative;
+  width: 80px;
+  white-space: nowrap;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  & span{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: rotateZ(-90deg);
+    transform-origin: 0 0;
+  }
+}
+
+.menu__list-content{
+  background: rgba($color: #2f3234, $alpha: 0.93);
+  color: #fff;
+  font-size: 14px;
+  @include ubuntu(light);
+  max-width: 540px;
+  text-align: center;
+  width: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p{
+    display: inline-block;
+    width: 90%;
+  }
+}
+
+.menu__list-title{
+
+}
+
+.menu__list-title--meat{
+  background: url('../img/bg/bg_meatMenu.png') center center / cover no-repeat;
+}
+.menu__list-title--veg{
+  background: url('../img/bg/bg_vegMenu.png') center center / cover no-repeat;
+}
+.menu__list-title--diet{
+  background: url('../img/bg/bg_dietMenu.png') center center / cover no-repeat;
+}

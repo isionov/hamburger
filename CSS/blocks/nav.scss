@@ -1,0 +1,33 @@
+.nav{
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav__list{
+  display: flex;
+  margin-right: 15px;
+}
+
+.nav__item{
+  display: flex;
+  align-items: center;
+  &:before{
+    @include circle(4px,#fff);
+    display: block;
+    content: "";
+    margin: 0 10px;
+  }
+
+  &:first-child:before  {
+    display: none;
+  }
+}
+
+.nav__link{
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  display: block;
+  @include ubuntu(medium);
+  font-size: 13px;
+}

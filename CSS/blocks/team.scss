@@ -1,0 +1,91 @@
+.team{
+  background: url("../img/bg/bg_team.jpg") center top / cover no-repeat;
+  position: relative;
+}
+
+.team__container{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  background-color: rgba($color: #2f3234, $alpha: 0.93);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.acco{
+  width: 350px;
+}
+
+.acco__trigger{
+  display: flex;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+
+
+  &:before{
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-top-color: $yellow;
+    border-bottom-width: 0;
+    margin-right: 10px;
+  }
+}
+
+.acco__desc{
+  color: #fff;
+  font-size: 14px;
+  margin-left: 20px;
+}
+
+.acco__desk-title{
+  @include ubuntu(bold);
+}
+.acco__desk-text{
+  @include ubuntu(light);
+}
+
+.acco__content{
+  height: 0;
+  overflow: hidden;
+  width: 350px;
+  display: flex;
+}
+
+.acco__pic{
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-basis: 100%;
+  max-width: 100px;
+  display: flex;
+  justify-content: center;
+   img{
+    //width: 100px;
+    height: 100px;
+  }
+}
+
+.acco__item--active{
+  .acco__trigger{
+    color: $yellow;
+    &:before{
+      transform: rotate(180deg);
+    }
+  }
+
+  .acco__content{
+    height: auto;
+    margin-bottom: 10px;
+  }
+}
