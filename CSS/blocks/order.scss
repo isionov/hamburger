@@ -1,19 +1,29 @@
 .order{
   background: url('../img/bg/bg_order.jpg') center center / cover no-repeat;
   color: #fff;
-  font-size: 14px;
+  font-size: rem(14px);
   @include ubuntu(light);
   line-height: 1.42;
 }
 
+.container--order{
+  text-align: center;
+}
+
+.section__title--order-align{
+  // display: flex;
+  // width: fit-content;
+  // align-self: center;
+}
+
 .form__input{
-  font-size: 14px;
+  font-size: rem(14px);
   @include ubuntu(light);
   line-height: 1.42;
-  border-width: 2px;
+  border-width: rem(2px);
   border-color: transparent;
-  border-radius: 5px;
-  padding: 8px 20px;
+  border-radius: rem(5px);
+  padding: rem(8px) rem(20px);
   width: 100%;
   &:focus{
     border-color: #f9b43b;
@@ -23,12 +33,12 @@
 
 .form__row{
   display: flex;
-  margin-bottom: 20px;
+  margin-bottom: rem(20px);
 }
 
 .form__block{
   flex: 1;
-  margin-right: 20px;
+  margin-right: rem(20px);
   &:last-child{
     margin-right: 0;
   }
@@ -36,26 +46,34 @@
 
 .column__wrap{
   display: flex;
+
+  @include tablets{
+    flex-direction: column;
+  }
 }
 
 .form__column{
   flex: 1;
-  margin-right: 20px;
+  margin-right: rem(20px);
   &:last-child{
     margin-right: 0;
+  }
+
+  @include tablets{
+    margin: 0;
   }
 }
 
 .form__tarea{
-  font-size: 14px;
+  font-size: rem(14px);
   @include ubuntu(light);
   line-height: 1.42;
   width: 100%;
-  height: 118px;
-  border-width: 2px;
+  height: rem(118px);
+  border-width: rem(2px);
   border-color: transparent;
-  border-radius: 5px;
-  padding: 8px 20px;
+  border-radius: rem(5px);
+  padding: rem(8px) rem(20px);
   &:focus{
     border-color: #f9b43b;
     outline-color: transparent;
@@ -63,23 +81,23 @@
 }
 
 // .form-radio{
-//   margin-bottom: 25px;
+//   margin-bottom: rem(25px);
 // }
 
 .radio{
-  margin-right: 20px;
+  margin-right: rem(20px);
   &:last-child{
-    margin-right: 0px;
+    margin-right: rem(0px);
   }
 }
 
 .btn--clear{
   outline-color: transparent;
   border: transparent;
-  font-size: 14px;
+  font-size: rem(14px);
   @include ubuntu(medium);
-  margin-right: 5px;
+  margin-right: rem(5px);
   &:last-child{
-    margin-right: 0px;
+    margin-right: rem(0px);
   }
 }

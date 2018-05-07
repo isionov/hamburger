@@ -1,9 +1,9 @@
 .footer{
-  min-height: 60px;
+  min-height: rem(60px);
   width: 100%;
   position: absolute;
-  bottom: 0px;
-  font-size: 14px;
+  bottom: rem(0px);
+  font-size: rem(14px);
   @include ubuntu(light);
   color: #fff;
   background: url(../img/bg/bg_footer.jpg) center center / cover no-repeat;
@@ -23,8 +23,8 @@
 }
 
 .adr-pic{
-  width: 11px;
-  height: 11px;
+  width: rem(11px);
+  height: rem(11px);
   position: relative;
   display: inline-block;
   vertical-align: middle;
@@ -44,16 +44,16 @@
   @include ubuntu(bold);
   display: inline-block;
   align-self: center;
-  margin-left: 10px;
+  margin-left: rem(10px);
 }
 
 .soc{
-  width: 30px;
-  height: 30px;
+  width: rem(30px);
+  height: rem(30px);
   display: inline-block;
-  margin-right: 20px;
+  margin-right: rem(20px);
   &:last-child{
-    margin-right: 0px;
+    margin-right: rem(0px);
   }
   &:hover .soc-svg{
     fill: #fff;
@@ -71,7 +71,7 @@
 
 .footer__wrap{
   display: flex;
-  min-height: 60px;
+  min-height: rem(60px);
 }
 
 .footer__elem--text-align{

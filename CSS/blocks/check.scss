@@ -8,14 +8,14 @@
 }
 
 .check__custom{
-  width: 18px;
-  height: 18px;
+  width: rem(18px);
+  height: rem(18px);
   position: relative;
   background: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 10px;
+  margin-right: rem(10px);
 }
 
 .check__custom-svg{

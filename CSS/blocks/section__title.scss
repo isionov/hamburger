@@ -1,8 +1,8 @@
 .section__title{
   @include gagalin();
-  font-size: 72px;
+  font-size: rem(72px);
   color: $yellow;
-  margin-bottom: 20px;
+  margin-bottom: rem(20px);
   
   &--align-center{
     text-align: center;

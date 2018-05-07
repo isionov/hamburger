@@ -5,17 +5,20 @@
 
 .nav__list{
   display: flex;
-  margin-right: 15px;
+  margin-right: rem(15px);
+  @include tablets{
+    display: none;
+  }
 }
 
 .nav__item{
   display: flex;
   align-items: center;
   &:before{
-    @include circle(4px,#fff);
+    @include circle(rem(4px),#fff);
     display: block;
     content: "";
-    margin: 0 10px;
+    margin: 0 rem(10px);
   }
 
   &:first-child:before  {
@@ -29,5 +32,5 @@
   color: #fff;
   display: block;
   @include ubuntu(medium);
-  font-size: 13px;
+  font-size: rem(13px);
 }

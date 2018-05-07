@@ -17,6 +17,12 @@
       opacity: 1;
     }
   }
+
+  @include tablets{
+    height: 25%;
+    width: 50%;
+    text-align: center;
+  }
 }
 
 .reviews__hover{
@@ -28,7 +34,7 @@
   background: rgba($color: #000000, $alpha: 0.5);
   opacity: 0;
   transition: .3s;
-  font-size: 14px;
+  font-size: rem(14px);
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -42,15 +48,23 @@
 
 .reviews__title{
   @include gagalin();
-  padding-top: 45px;
+  padding-top: rem(45px);
   text-transform: uppercase;
+
+  @include tablets{
+    padding-top: 6%;
+  }
 }
 
 .reviews__text{
   @include ubuntu(300);
-  padding-top: 25px;
-  max-height: 55%;
+  padding-top: rem(25px);
+  max-height: 1.42*8em;
   overflow: hidden;
+
+  @include tablets{
+    padding-top: 6%;
+  }
 }
 
 .reviews__ref{
@@ -58,9 +72,14 @@
   text-decoration: none;
   color: #fff;
   display: inline-block;
-  padding: 10px 15px;
+  padding: rem(10px) rem(15px);
   background-color: #1f2122;
-  border-radius: 5px;
+  border-radius: rem(5px);
   text-transform: uppercase;
-  margin-top: 15px;
+  margin-top: rem(15px);
+
+  @include tablets{
+    padding: rem(5px) rem(7.5px);
+    margin-top: 6%;
+  }
 }

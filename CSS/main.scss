@@ -5,12 +5,16 @@ $orange: #e45028;
 $yellow: #f9b43b;
 $black: #2f3234;
 
+//breakpoints
+$tablets: 786px;
+$phones: 480px;
 
 //normalize
 @import "_misc/normalize.scss";
 
 
 //setup
+@import "_misc/media.scss";
 @import "_misc/fonts.scss";
 @import "_misc/mixins.scss";
 @import "_misc/layout.scss";
@@ -29,3 +33,4 @@ $black: #2f3234;
 @import "blocks/check.scss";
 @import "blocks/contacts.scss";
 @import "blocks/footer.scss";
+@import "blocks/fixed_menu.scss";

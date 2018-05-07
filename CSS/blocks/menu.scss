@@ -11,7 +11,7 @@
 
 .section__title--menu{
   color: #fff;
-  padding-top: 100px;
+  padding-top: rem(100px);
 }
 
 .menu__list{
@@ -25,7 +25,7 @@
     display: flex;
     &--active{
       .menu__list-content{
-        width: 540px;
+        width: rem(540px);
       }
       .menu__list-title{
         color: $yellow;
@@ -36,12 +36,12 @@
 
 .menu__list-title{
   @include gagalin();
-  font-size: 40px;
+  font-size: rem(40px);
   line-height: 2;
   color: #fff;
   text-transform: uppercase;
   position: relative;
-  width: 80px;
+  width: rem(80px);
   white-space: nowrap;
   background-position: center;
   background-size: cover;
@@ -59,9 +59,9 @@
 .menu__list-content{
   background: rgba($color: #2f3234, $alpha: 0.93);
   color: #fff;
-  font-size: 14px;
+  font-size: rem(14px);
   @include ubuntu(light);
-  max-width: 540px;
+  max-width: rem(540px);
   text-align: center;
   width: 0;
   overflow: hidden;

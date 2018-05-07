@@ -3,12 +3,12 @@
 }
 
 .radio__custom{
-  width: 18px;
-  height: 18px;
+  width: rem(18px);
+  height: rem(18px);
   position: relative;
   vertical-align: middle;
   background: #fff;
-  margin-right: 10px;
+  margin-right: rem(10px);
 }
 
 .radio__custom, .radio__text {
@@ -20,12 +20,12 @@
 	content: "";
 	display: block;
 	position: absolute;
-	top: 5px;
-	right: 5px;
-	bottom: 5px;
-	left: 5px;
+	top: rem(5px);
+	right: rem(5px);
+	bottom: rem(5px);
+	left: rem(5px);
 	background: $orange;
-  border-radius: 5px;
+  border-radius: rem(5px);
 }
 .radio__custom,
 .radio__elem:checked + .radio__custom::before {
