@@ -15,8 +15,29 @@
 .best__list{
   display: flex;
   justify-content: space-around;
+
+  @include phones{
+    flex-direction: column;
+  }
 }
 
 .best__item{
   text-align: center;
+  flex: 1;
+  @include phones{
+    display: flex;
+    align-items: center;
+    margin-bottom: rem(50px);
+  }
+}
+
+.best__text{
+  @include phones{
+    text-align: left;
+    margin-left: 3%;
+  }
+}
+
+.best__pic{
+  margin-bottom: rem(25px);
 }

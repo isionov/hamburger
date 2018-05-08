@@ -26,16 +26,19 @@
                   <a href="#" class="nav__link">О нас</a>
                 </li>
                 <li class="nav__item">
-                  <a href="#" class="nav__link">О нас</a>
+                  <a href="#" class="nav__link">Бургеры</a>
                 </li>
                 <li class="nav__item">
-                  <a href="#" class="nav__link">О нас</a>
+                  <a href="#" class="nav__link">Команда</a>
                 </li>
                 <li class="nav__item">
-                  <a href="#" class="nav__link">О нас</a>
+                  <a href="#" class="nav__link">Меню</a>
                 </li>
                 <li class="nav__item">
-                  <a href="#" class="nav__link">О нас</a>
+                  <a href="#" class="nav__link">Отзывы</a>
+                </li>
+                <li class="nav__item">
+                  <a href="#" class="nav__link">Контакты</a>
                 </li>
               </ul>
               <div class="header__links">
@@ -49,7 +52,7 @@
 
           <div class="hero__container">
             <div class="hero__content">
-              <div class="here__content-pic">
+              <div class="hero__content-pic">
                 <img src="./img/content/start_burger2.png" alt="burger" class="hero__burger">
               </div>
 
@@ -65,7 +68,7 @@
 
       <section class="section best">
         <div class="container">
-          <div class="section__title section__title--align-center section__title--color-black">Мы лучшие</div>
+          <div class="section__title section__title--align-center section__title--color-black section__title--margin">Мы лучшие</div>
           <ul class="best__list">
             <li class="best__item">
               <div class="best__pic">
@@ -188,7 +191,7 @@
       </section>
 
       <section class="section menu">
-        <div class="container container--menu">
+        <!-- <div class="container container--menu"> -->
           <h2 class="section__title section__title--menu">меню</h2>
           <ul class="menu__list">
             <li class="menu__list-elem menu__list-elem--active">
@@ -219,8 +222,8 @@
                 </p>
               </div>
             </li>
-            <li class="menu__list-elem" style="background: url('../img/bg/bg_dietMenu.png');">
-              <div class="menu__list-title">
+            <li class="menu__list-elem">
+              <div class="menu__list-title" style="background: url('../img/bg/bg_dietMenu.png');">
                 <span>диетическое</span>
               </div>
               <div class="menu__list-content">
@@ -233,9 +236,8 @@
                 </p>
               </div>
             </li>
-
           </ul>
-        </div>
+        <!-- </div> -->
       </section>
 
       <section class="section reviews">
@@ -351,31 +353,31 @@
                     <input type="text" class="form__input">
                   </label>
                   <label class="form__block">
-                    <div class="form__title">Имя</div>
+                    <div class="form__title">Телефон</div>
                     <input type="text" class="form__input">
                   </label>
                 </div>
                 <div class="form__row">
                   <label class="form__block">
-                    <div class="form__title">Имя</div>
+                    <div class="form__title">Улица</div>
                     <input type="text" class="form__input">
                   </label>
                 </div>
                 <div class="form__row">
                   <label class="form__block">
-                    <div class="form__title">Имя</div>
+                    <div class="form__title">Дом</div>
                     <input type="text" class="form__input">
                   </label>
                   <label class="form__block">
-                    <div class="form__title">Имя</div>
+                    <div class="form__title">Корпус</div>
                     <input type="text" class="form__input">
                   </label>
                   <label class="form__block">
-                    <div class="form__title">Имя</div>
+                    <div class="form__title">Квартира</div>
                     <input type="text" class="form__input">
                   </label>
                   <label class="form__block">
-                    <div class="form__title">Имя</div>
+                    <div class="form__title">Этаж</div>
                     <input type="text" class="form__input">
                   </label>
                 </div>
@@ -383,17 +385,17 @@
 
               <div class="form__column">
 
-                <div class="form__row">
+                <div class="form__row form__row--margin-bottom">
                   <label class="form__block">
-                    <div class="form__title">Имя</div>
+                    <div class="form__title">Комментарий</div>
                     <textarea name="comment" id="comment" class="form__tarea"></textarea>
                   </label>
                 </div>
 
-                <div class="form__row">
+                <div class="form__row form__row--margin-top">
                   <div class="form-radio">
                     <label class="radio">
-                      <input type="radio" name="payment" id="a" class="radio__elem">
+                      <input type="radio" name="payment" id="a" class="radio__elem" checked>
                       <span class="radio__custom"></span>
                       <span class="radio__text">Потребуется сдача</span>
                     </label>
@@ -405,7 +407,7 @@
                   </div>
                 </div>
 
-                <div class="form__row">
+                <div class="form__row form__row--margin-top">
                   <div class="form-check">
                     <label class="check">
                       <input type="checkbox" name="call" id="c" class="check__elem">
@@ -419,7 +421,7 @@
                   </div>
                 </div>
 
-                <div class="form__row">
+                <div class="form__row form-row--button form__row--margin-top">
                   <button class="btn btn--clear">заказать</button>
                   <button class="btn btn--clear">очистить</button>
                 </div>

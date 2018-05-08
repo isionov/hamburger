@@ -20,6 +20,10 @@
 
 .adr{
   width: 100%;
+  @include phones{
+    margin-bottom: rem(3px);
+    padding-top: rem(10px);
+  }
 }
 
 .adr-pic{
@@ -48,8 +52,8 @@
 }
 
 .soc{
-  width: rem(30px);
-  height: rem(30px);
+  width: rem(20px);
+  height: rem(20px);
   display: inline-block;
   margin-right: rem(20px);
   &:last-child{
@@ -72,10 +76,33 @@
 .footer__wrap{
   display: flex;
   min-height: rem(60px);
+  @include phones{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    flex-direction: column;
+  }
 }
 
 .footer__elem--text-align{
 justify-content: flex-end;
 align-items: center;
+@include phones{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+}
+
+.footer__elem{
+  @include phones{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    margin-bottom: rem(10px);
+  }
 }
 

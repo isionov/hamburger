@@ -26,14 +26,19 @@
   width: rem(350px);
 }
 
+.acco__item{
+  margin-bottom: rem(45px);
+}
+
 .acco__trigger{
   display: flex;
   align-items: center;
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
-  margin-bottom: rem(10px);
-
+  // margin-bottom: rem(10px);
+  font-size: rem(14px);
+  @include gagalin();
 
   &:before{
     content: "";
@@ -58,6 +63,7 @@
 
 .acco__desk-title{
   @include ubuntu(bold);
+  margin-bottom: rem(10px);
 }
 .acco__desk-text{
   @include ubuntu(light);
@@ -68,6 +74,9 @@
   overflow: hidden;
   width: rem(350px);
   display: flex;
+  padding-top: rem(10px);
+  padding-left: rem(41px);
+
   @include tablets {
     flex-direction: column;
     align-items: center;

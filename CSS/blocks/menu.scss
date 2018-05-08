@@ -11,7 +11,11 @@
 
 .section__title--menu{
   color: #fff;
-  padding-top: rem(100px);
+  // padding-top: rem(85px);
+  // padding-left: rem(20px);
+  padding-top: 6%;
+  padding-left: 6%;
+
 }
 
 .menu__list{
@@ -21,11 +25,25 @@
   bottom: 0;
   display: flex;
   overflow: hidden;
+  width: 71%;
+  @include tablets{
+    width: 100%;
+  }
+  @include phones{
+    width: 100%;
+    justify-content: flex-end;
+  }
+  
   &-elem{
     display: flex;
     &--active{
+      @include phones{
+        position: absolute;
+        height: 100%;
+        z-index: 30;
+      }
       .menu__list-content{
-        width: rem(540px);
+        width: 100%;
       }
       .menu__list-title{
         color: $yellow;
@@ -50,7 +68,7 @@
   & span{
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: rem(-44px);
     transform: rotateZ(-90deg);
     transform-origin: 0 0;
   }
@@ -61,16 +79,18 @@
   color: #fff;
   font-size: rem(14px);
   @include ubuntu(light);
-  max-width: rem(540px);
-  text-align: center;
+  // max-width: rem(540px);
+  text-align: left;
   width: 0;
   overflow: hidden;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   p{
     display: inline-block;
-    width: 90%;
+    width: 80%;
+    padding-top: 15%;
+    line-height: 1.71;
   }
 }
 
