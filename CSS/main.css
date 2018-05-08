@@ -894,14 +894,10 @@ footer {
     padding-top: 15%;
     line-height: 1.71; }
 
-.menu__list-title--meat {
-  background: url("../img/bg/bg_meatMenu.png") center center/cover no-repeat; }
-
-.menu__list-title--veg {
-  background: url("../img/bg/bg_vegMenu.png") center center/cover no-repeat; }
-
-.menu__list-title--diet {
-  background: url("../img/bg/bg_dietMenu.png") center center/cover no-repeat; }
+.menu__list-title {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
 
 .reviews__list {
   height: 100%;
