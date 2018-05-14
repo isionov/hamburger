@@ -79,7 +79,7 @@ footer{
 }
 
 .section{
-min-height: rem(650px);
+min-height: 650px;
 height: 100vh;//               Увидим баг с vh когда будем пиасть onePageScroll и заменим на 100%
 }
 

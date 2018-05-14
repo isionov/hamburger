@@ -58,7 +58,7 @@
   text-transform: uppercase;
 
   @include tablets{
-    padding-top: 6%;
+    padding-top: 2%;
   }
   @include phones{
     font-size: 24px;
@@ -73,7 +73,8 @@
   line-height: 1.7;
 
   @include tablets{
-    padding-top: 6%;
+    padding-top: 2%;
+    max-height: 1.7*3em;
   }
   
   @include phones{
@@ -98,7 +99,7 @@
 
   @include tablets{
     padding: rem(5px) rem(7.5px);
-    margin-top: 6%;
+    margin-top: 2%;
   }
   @include phones{
     padding: rem(5px) rem(7.5px);
