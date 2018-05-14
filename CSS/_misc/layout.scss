@@ -21,6 +21,12 @@ body{
   color: $black;
 }
 
+html, body{
+  .active{
+    overflow: hidden;
+  }
+}
+
 .wrapper{
   position: relative;
   width: 100%; //понадобится пр адаптиве

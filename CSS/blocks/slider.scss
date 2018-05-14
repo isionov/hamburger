@@ -1,0 +1,134 @@
+.slider{
+  background: linear-gradient(to bottom, #f9b43b, #eb8c38,#f9b43b);
+  position: relative;
+}
+
+.slider-back{
+  position: absolute;
+  top: 50%;
+  left: rem(-40px);
+  transform: translateY(-50%);
+  transform: rotate(90deg);
+  transform-origin: center;
+  & svg{
+    width: rem(28px);
+    height: rem(14px);
+  }
+}
+.slider-forward{
+  position: absolute;
+  top: 50%;
+  right: rem(-40px);
+  transform: translateY(-50%);
+  transform: rotate(-90deg);
+  transform-origin: center;
+  & svg{
+    width: rem(28px);
+    height: rem(14px);
+  }
+}
+
+.composition{
+  position: absolute;
+  top: 12%;
+  left: 0;
+  width: rem(90px);
+  height: rem(90px);
+  background-color: #f08c33;
+  & svg{
+    width: 50%;
+    height: 50%;
+  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.composition__text{
+@include gagalin();
+font-size: rem(14px);
+color: #fff;
+margin-top: rem(5px);
+}
+.energy{
+  position: absolute;
+  bottom: 20%;
+  left: 0;
+  width: rem(80px);
+  height: rem(80px);
+  text-align: center;
+  color: #fff;
+  @include gagalin();
+  font-size: rem(20px);
+}
+
+.energy_pic{
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  & svg{
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.energy__val{
+  margin-top: 44%;
+}
+
+.energy__dimension{
+  font-size: rem(14px);
+}
+
+.slider_content{
+  display: flex;
+  width: 100%;
+}
+
+.slider_content__burger{
+  flex-basis: 60%;
+  // display: flex;
+}
+
+.slider_content__burger-pic{
+  width: 100%;
+}
+
+.slider_content__text{
+  flex-basis: 40%;
+  color: #fff;
+}
+
+.slider_content__text-title{
+  @include gagalin();
+  font-size: rem(72px);
+  line-height: 1.0;
+}
+
+.slider_content__text-descript{
+  @include ubuntu(light);
+  font-size: rem(14px);
+  line-height: rem(24px);
+}
+
+.slider_content__text-order{
+  display: flex;
+  align-items: baseline;
+}
+
+.slider_content__text-price{
+  @include gagalin();
+  font-size: rem(30px);
+  color: $orange;
+  & span{
+    font-size: rem(72px);
+  }
+}
+
+.slider-btn-margin-left{
+  margin-left: rem(25px);
+}

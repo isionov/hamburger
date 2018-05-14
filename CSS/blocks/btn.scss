@@ -8,4 +8,7 @@
   @include ubuntu(medium);
   font-size: rem(13px);
   text-transform: uppercase;
+  &:hover{
+    background-color: darken($color: $orange, $amount: 10%);
+  }
 }
