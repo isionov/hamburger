@@ -37,7 +37,7 @@ refs[0].addEventListener('click',function(event){
   if(flag==true){
   document.body.classList.toggle(active);
   htmlObj.classList.toggle(active);
-  best.classList.toggle(navActive);
+  nav.classList.toggle(navActive);
 }
   flag = false;
   best.scrollIntoView(true);
