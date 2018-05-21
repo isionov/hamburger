@@ -1701,15 +1701,21 @@ footer {
       -ms-flex-pack: center;
       justify-content: center;
       -ms-flex-preferred-size: 35%;
-      flex-basis: 35%; } }
+      flex-basis: 35%;
+      width: 45%; } }
 
 .slider_content__burger-pic {
   width: 100%; }
   @media screen and (max-width: 786px) {
     .slider_content__burger-pic {
-      width: 70%;
       -ms-flex-item-align: end;
-      align-self: flex-end; } }
+      align-self: flex-end;
+      max-width: -webkit-fit-content;
+      max-width: -moz-fit-content;
+      max-width: fit-content;
+      max-height: -webkit-fit-content;
+      max-height: -moz-fit-content;
+      max-height: fit-content; } }
 
 .slider_content__text {
   -ms-flex-preferred-size: 45%;

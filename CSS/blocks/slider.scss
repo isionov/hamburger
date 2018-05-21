@@ -134,6 +134,7 @@ margin-top: rem(5px);
     display: flex;
     justify-content: center;
     flex-basis: 35%;
+    width: 45%;
   }
 }
 
@@ -142,8 +143,10 @@ margin-top: rem(5px);
   @include tablets{
     // width: auto;
     // height: 100%;
-    width: 70%;
+    // width: unset;
     align-self: flex-end;
+    max-width: fit-content;
+    max-height: fit-content;
   }
 }
 
