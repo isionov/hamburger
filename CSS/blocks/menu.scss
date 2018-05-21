@@ -26,6 +26,7 @@
   display: flex;
   overflow: hidden;
   width: rem(560px);
+  justify-content: flex-end;
   @include tablets{
     width: 100%;
   }

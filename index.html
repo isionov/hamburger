@@ -6,13 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="./CSS/main.css">
+  <link rel="stylesheet" type="text/css" href="./fullPage.js-master/jquery.fullPage.css" />
   <title>Document</title>
 </head>
 
 <body>
   <div class="wrapper">
     <div class="maincontent">
-
+      <div id="fullpage">
       <section class="section hero">
         <div class="container hero__inner-container">
           <header class="header">
@@ -47,9 +48,9 @@
                   <div class="hamburger-menu-link__bars"></div>
                 </a>
                 <a href="#" class="hamburger-menu-x">
-                    <svg>
-                      <use xlink:href="img/icons/sprite/sprite.svg#close"></use>
-                    </svg>
+                  <svg>
+                    <use xlink:href="img/icons/sprite/sprite.svg#close"></use>
+                  </svg>
                 </a>
               </div>
             </nav>
@@ -124,53 +125,209 @@
       </section>
 
       <section class="section slider">
+
         <div class="container">
 
-          <div class="composition">
+          <div class="slider-back">
             <svg>
-              <use xlink:href="img/icons/sprite/sprite.svg#burger"></use>
+              <use xlink:href="img/icons/sprite/sprite.svg#scroll"></use>
             </svg>
-            <div class="composition__text">состав</div>
           </div>
-          <div class="energy">
-            <div class="energy_pic">
-              <svg>
-                <use xlink:href="img/icons/sprite/sprite.svg#kkal"></use>
-              </svg>
-            </div>
-            <div class="energy__val">1200</div>
-            <div class="energy__dimension">kkal</div>
+          <div class="slider-forward">
+            <svg>
+              <use xlink:href="img/icons/sprite/sprite.svg#scroll"></use>
+            </svg>
           </div>
-          <div class="slider_content">
 
-              <div class="slider-back">
+          <div class="slider__wrap">
+            <div class="slider__list">
+              <div class="slider__elem">
+                <div class="composition">
                   <svg>
-                    <use xlink:href="img/icons/sprite/sprite.svg#scroll"></use>
+                    <use xlink:href="img/icons/sprite/sprite.svg#burger"></use>
                   </svg>
+                  <div class="composition__text">состав</div>
                 </div>
-                <div class="slider-forward">
+                <div class="energy">
+                  <div class="energy_pic">
+                    <svg>
+                      <use xlink:href="img/icons/sprite/sprite.svg#kkal"></use>
+                    </svg>
+                  </div>
+                  <div class="energy__val">1200</div>
+                  <div class="energy__dimension">kkal</div>
+                </div>
+                <div class="slider_content">
+                  <div class="slider_content__burger">
+                    <img src="./img/content/burgers_slider/burgCuttleInk.png" alt="" class="slider_content__burger-pic">
+                  </div>
+                  <div class="slider_content__text">
+                    <div class="slider_content__text-title">Dark BEEF Burger</div>
+                    <div class="slider_content__text-descript">
+                      <p>Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками нежнейшего сыра
+                        эмменталь, двумя помидорами, луком, салатом и соусом гриль теперь с добавлением экзотического соуса
+                        чураско.
+                      </p>
+                    </div>
+                    <div class="slider_content__text-order">
+                      <div class="slider_content__text-price">
+                        <span>500</span>рублей</div>
+                      <div class="btn slider-btn-margin-left">заказать</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slider__elem">
+                <div class="composition">
                   <svg>
-                    <use xlink:href="img/icons/sprite/sprite.svg#scroll"></use>
+                    <use xlink:href="img/icons/sprite/sprite.svg#burger"></use>
                   </svg>
+                  <div class="composition__text">состав</div>
                 </div>
+                <div class="energy">
+                  <div class="energy_pic">
+                    <svg>
+                      <use xlink:href="img/icons/sprite/sprite.svg#kkal"></use>
+                    </svg>
+                  </div>
+                  <div class="energy__val">1200</div>
+                  <div class="energy__dimension">kkal</div>
+                </div>
+                <div class="slider_content">
+                  <div class="slider_content__burger">
+                    <img src="./img/content/burgers_slider/burger_sandwich_PNG4124.png" alt="" class="slider_content__burger-pic">
+                  </div>
+                  <div class="slider_content__text">
+                    <div class="slider_content__text-title">Sandwich Burger</div>
+                    <div class="slider_content__text-descript">
+                      <p>Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками нежнейшего сыра
+                        эмменталь, двумя помидорами, луком, салатом и соусом гриль теперь с добавлением экзотического соуса
+                        чураско.
+                      </p>
+                    </div>
+                    <div class="slider_content__text-order">
+                      <div class="slider_content__text-price">
+                        <span>250</span>рублей</div>
+                      <div class="btn slider-btn-margin-left">заказать</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slider__elem">
+                <div class="composition">
+                  <svg>
+                    <use xlink:href="img/icons/sprite/sprite.svg#burger"></use>
+                  </svg>
+                  <div class="composition__text">состав</div>
+                </div>
+                <div class="energy">
+                  <div class="energy_pic">
+                    <svg>
+                      <use xlink:href="img/icons/sprite/sprite.svg#kkal"></use>
+                    </svg>
+                  </div>
+                  <div class="energy__val">1200</div>
+                  <div class="energy__dimension">kkal</div>
+                </div>
+                <div class="slider_content">
+                  <div class="slider_content__burger">
+                    <img src="./img/content/burgers_slider/Chiken burger.png" alt="" class="slider_content__burger-pic">
+                  </div>
+                  <div class="slider_content__text">
+                    <div class="slider_content__text-title">Dark BEEF Burger</div>
+                    <div class="slider_content__text-descript">
+                      <p>Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками нежнейшего сыра
+                        эмменталь, двумя помидорами, луком, салатом и соусом гриль теперь с добавлением экзотического соуса
+                        чураско.
+                      </p>
+                    </div>
+                    <div class="slider_content__text-order">
+                      <div class="slider_content__text-price">
+                        <span>300</span>рублей</div>
+                      <div class="btn slider-btn-margin-left">заказать</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slider__elem">
+                <div class="composition">
+                  <svg>
+                    <use xlink:href="img/icons/sprite/sprite.svg#burger"></use>
+                  </svg>
+                  <div class="composition__text">состав</div>
+                </div>
+                <div class="energy">
+                  <div class="energy_pic">
+                    <svg>
+                      <use xlink:href="img/icons/sprite/sprite.svg#kkal"></use>
+                    </svg>
+                  </div>
+                  <div class="energy__val">1200</div>
+                  <div class="energy__dimension">kkal</div>
+                </div>
+                <div class="slider_content">
+                  <div class="slider_content__burger">
+                    <img src="./img/content/burgers_slider/NYC-Diner-Bacon-Cheeseburger.png" alt="" class="slider_content__burger-pic">
+                  </div>
+                  <div class="slider_content__text">
+                    <div class="slider_content__text-title">NYC Dinner Bacon Cheeseburger</div>
+                    <div class="slider_content__text-descript">
+                      <p>Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками нежнейшего сыра
+                        эмменталь, двумя помидорами, луком, салатом и соусом гриль теперь с добавлением экзотического соуса
+                        чураско.
+                      </p>
+                    </div>
+                    <div class="slider_content__text-order">
+                      <div class="slider_content__text-price">
+                        <span>400</span>рублей</div>
+                      <div class="btn slider-btn-margin-left">заказать</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slider__elem">
+                <div class="composition">
+                  <svg>
+                    <use xlink:href="img/icons/sprite/sprite.svg#burger"></use>
+                  </svg>
+                  <div class="composition__text">состав</div>
+                </div>
+                <div class="energy">
+                  <div class="energy_pic">
+                    <svg>
+                      <use xlink:href="img/icons/sprite/sprite.svg#kkal"></use>
+                    </svg>
+                  </div>
+                  <div class="energy__val">1200</div>
+                  <div class="energy__dimension">kkal</div>
+                </div>
+                <div class="slider_content">
+                  <div class="slider_content__burger">
+                    <img src="./img/content/burgers_slider/Spicy_Shrimp_Burger.png" alt="" class="slider_content__burger-pic">
+                  </div>
+                  <div class="slider_content__text">
+                    <div class="slider_content__text-title">Spicy Shrimp Burger</div>
+                    <div class="slider_content__text-descript">
+                      <p>Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками нежнейшего сыра
+                        эмменталь, двумя помидорами, луком, салатом и соусом гриль теперь с добавлением экзотического соуса
+                        чураско.
+                      </p>
+                    </div>
+                    <div class="slider_content__text-order">
+                      <div class="slider_content__text-price">
+                        <span>100</span>рублей</div>
+                      <div class="btn slider-btn-margin-left">заказать</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-            <div class="slider_content__burger">
-              <img src="./img/content/burgCuttleInk.png" alt="" class="slider_content__burger-pic">
-            </div>
-            <div class="slider_content__text">
-              <div class="slider_content__text-title">Dark BEEF Burger</div>
-              <div class="slider_content__text-descript">
-                <p>Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками нежнейшего сыра эмменталь,
-                  двумя помидорами, луком, салатом и соусом гриль теперь с добавлением экзотического соуса чураско.</p>
-              </div>
-              <div class="slider_content__text-order">
-                <div class="slider_content__text-price">
-                  <span>500</span>рублей</div>
-                <div class="btn slider-btn-margin-left">заказать</div>
-              </div>
             </div>
           </div>
         </div>
+
+
+
       </section>
 
       <section class="section team">
@@ -246,10 +403,9 @@
       </section>
 
       <section class="section menu">
-        <!-- <div class="container container--menu"> -->
         <h2 class="section__title section__title--menu">меню</h2>
         <ul class="menu__list">
-          <li class="menu__list-elem menu__list-elem--active">
+          <li class="menu__list-elem">
             <div class="menu__list-title" style="background: url('./img/bg/bg_meatMenu.png');">
               <span>для мясоедов</span>
             </div>
@@ -292,7 +448,6 @@
             </div>
           </li>
         </ul>
-        <!-- </div> -->
       </section>
 
       <section class="section reviews">
@@ -394,6 +549,16 @@
             </div>
           </li>
         </ul>
+        <script type="template" id="overlayTemplate">
+        <div class="overlay">
+          <div class="overlay__bg"></div>
+          <div class="overlay__content">
+            <div class="overlay__title">bbb</div>
+            <div class="overlay__text">bbb</div>
+            <div class="overlay__close">x</div>
+          </div>
+        </div>
+      </script>
       </section>
 
       <section class="section order">
@@ -535,7 +700,7 @@
 
       </section>
 
-
+    </div>
 
       <ul class="fixed-menu">
         <li class="fixed-menu__item">
@@ -566,7 +731,10 @@
 
     </div>
   </div>
+  <script src="./JS/jquery-3.3.1.js"></script>
+  <script src="./fullPage.js-master/jquery.fullPage.js"></script>
   <script src="./JS/train.js"></script>
+ 
 </body>
 
 </html>

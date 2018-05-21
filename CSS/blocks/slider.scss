@@ -3,13 +3,35 @@
   position: relative;
 }
 
+.slider__wrap{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
+.slider__list{
+  display: flex;
+  flex-shrink: 0;
+  width: 500%;
+  transform: translateX(0%);
+}
+
+.slider__elem{
+  position: relative;
+  display: flex;
+  width: 20%;
+  justify-content: center;
+}
 .slider-back{
   position: absolute;
   top: 50%;
-  left: rem(-10px);
+  left: rem(-5px);
   transform: translateY(-50%);
   transform: rotate(90deg);
   transform-origin: center;
+  z-index: 30;
+  cursor: pointer;
   & svg{
     width: rem(28px);
     height: rem(14px);
@@ -18,10 +40,12 @@
 .slider-forward{
   position: absolute;
   top: 50%;
-  right: rem(-10px);
+  right: rem(-5px);
   transform: translateY(-50%);
   transform: rotate(-90deg);
   transform-origin: center;
+  z-index: 30;
+  cursor: pointer;
   & svg{
     width: rem(28px);
     height: rem(14px);
@@ -126,6 +150,9 @@ margin-top: rem(5px);
 .slider_content__text{
   flex-basis: 45%;
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   @include tablets{
     text-align: center;
     width: 95%;
@@ -142,7 +169,7 @@ margin-top: rem(5px);
   font-size: rem(72px);
   line-height: 1.0;
   @include tablets{
-    width: 75%;
+    width: 100%;
   }
   @include phones{
     font-size: rem(50px);
