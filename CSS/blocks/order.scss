@@ -11,7 +11,7 @@
 }
 
 .section__title--order-align{
-  margin-bottom: rem(25px);
+  margin-bottom: rem(10px);
   text-align: center;
   @include phones{
     font-size: rem(50px);
@@ -136,6 +136,6 @@
 
 .form__row--margin-top{
   @include phones{
-margin-top: rem(60px);
+margin-top: rem(10px);
   }
 }

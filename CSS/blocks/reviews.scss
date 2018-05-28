@@ -72,9 +72,11 @@
 .reviews__text{
   @include ubuntu(300);
   padding-top: rem(20px);
-  max-height: 1.7*7em;
+  
   overflow: hidden;
   line-height: 1.7;
+  font-size: rem(14px);
+  max-height: 1.7*6.5em;
 
   @include tablets{
     padding-top: 2%;
@@ -139,6 +141,9 @@
   height: rem(255px);
   padding: rem(22px);
   border-radius: 5px;
+  @include phones{
+    width: 100%;
+  }
 }
 
 .overlay__close{
@@ -147,6 +152,7 @@ top: 0px;
 right: 8px;
 color: #ec8468;
 cursor: pointer;
+font-size: rem(20px);
 }
 
 .overlay__title{

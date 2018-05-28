@@ -59,15 +59,31 @@
   width: rem(90px);
   height: rem(90px);
   background-color: #f08c33;
-  & svg{
-    width: 50%;
-    height: 50%;
+  cursor: pointer;
+  &:hover{
+    background-color: darken($color: #f08c33, $amount: 10);
+    .composition__describe{
+      width: rem(270px);
+      @include phones{
+        width: rem(200px);     
+      }
+    }
   }
+  // & svg{
+  //   width: 50%;
+  //   height: 50%;
+  // }
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   border-radius: 8px;
+
+}
+
+.composition__img{
+  width: 50%;
+  height: 50%;
 }
 
 .composition__text{
@@ -208,4 +224,44 @@ margin-top: rem(5px);
 
 .slider-btn-margin-left{
   margin-left: rem(25px);
+}
+
+.composition__describe{
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 0;
+  overflow: hidden;
+}
+.composition__describe-bg{
+  background-color: #fff;
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 5px;
+}
+.composition__describe-elem{
+  display: flex;
+
+  align-items: center;
+  justify-content: space-around;
+  z-index: 20;
+  padding-top: 5px;
+  padding: 5px;
+}
+
+.composition__describe-img{
+  height: rem(50px);
+  width: rem(50px);
+  z-index: 20;
+}
+.composition__describe-component{
+  z-index: 20;
+  flex-basis: 40%;
+}
+.composition__describe-weight{
+  z-index: 20;
 }

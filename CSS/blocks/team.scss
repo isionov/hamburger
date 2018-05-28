@@ -59,6 +59,9 @@
   color: #fff;
   font-size: rem(14px);
   margin-left: rem(20px);
+  @include tablets{
+    margin-left: 0;
+  }
 }
 
 .acco__desk-title{
