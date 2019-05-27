@@ -100,7 +100,7 @@ $(function() {
       if (activeElem === content) {
         activeElem = null;
       } else {
-        content.style.width = "80%";
+        content.style.width = "100%";
         activeElem = content;
       }
     });
@@ -180,7 +180,7 @@ const setActiveFixedMenu = itemEq => {
 };
 
 const performTransition = sectionEq => {
-  const position = `-${sectionEq * 100}%`;
+  const position = `-${sectionEq * 100}vh`;
 
   if (inScroll) return;
   inScroll = true;
