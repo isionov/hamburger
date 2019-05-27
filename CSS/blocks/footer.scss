@@ -1,32 +1,32 @@
-.footer{
-  min-height: rem(60px);
+.footer {
+  min-height: 5.5rem;
   width: 100%;
-  // position: absolute;
-  bottom: rem(0px);
+  z-index: 1000;
+  position: absolute;
+  bottom: 0;
   font-size: rem(14px);
   @include ubuntu(light);
   color: #fff;
   background: url(../img/bg/bg_footer.jpg) center center / cover no-repeat;
   opacity: 0.9;
-
 }
 
-.footer__elem{
+.footer__elem {
   width: 50%;
   display: flex;
   flex-wrap: wrap;
   align-content: center;
 }
 
-.adr{
+.adr {
   width: 100%;
-  @include phones{
+  @include phones {
     margin-bottom: rem(3px);
     padding-top: rem(10px);
   }
 }
 
-.adr-pic{
+.adr-pic {
   width: rem(11px);
   height: rem(11px);
   position: relative;
@@ -34,7 +34,7 @@
   vertical-align: middle;
   align-self: center;
 }
-.adr-pic-svg{
+.adr-pic-svg {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -42,7 +42,7 @@
   left: 0;
 }
 
-.adr-tel{
+.adr-tel {
   text-decoration: none;
   color: $orange;
   @include ubuntu(bold);
@@ -51,15 +51,15 @@
   margin-left: rem(10px);
 }
 
-.soc{
+.soc {
   width: rem(20px);
   height: rem(20px);
   display: inline-block;
   margin-right: rem(20px);
-  &:last-child{
+  &:last-child {
     margin-right: rem(0px);
   }
-  &:hover .soc-svg{
+  &:hover .soc-svg {
     fill: #fff;
   }
   &:hover {
@@ -67,16 +67,16 @@
   }
 }
 
-.soc-svg{
+.soc-svg {
   width: 100%;
   height: 100%;
   fill: #585858;
 }
 
-.footer__wrap{
+.footer__wrap {
   display: flex;
   min-height: rem(60px);
-  @include phones{
+  @include phones {
     display: flex;
     justify-content: center;
     text-align: center;
@@ -85,19 +85,19 @@
   }
 }
 
-.footer__elem--text-align{
-justify-content: flex-end;
-align-items: center;
-@include phones{
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  width: 100%;
-}
+.footer__elem--text-align {
+  justify-content: flex-end;
+  align-items: center;
+  @include phones {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
 }
 
-.footer__elem{
-  @include phones{
+.footer__elem {
+  @include phones {
     display: flex;
     justify-content: center;
     text-align: center;
@@ -105,4 +105,3 @@ align-items: center;
     margin-bottom: rem(10px);
   }
 }
-

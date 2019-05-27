@@ -1,205 +1,225 @@
+// Support function
+
+function closest(elem, parentClass) {
+  while (elem.parentNode) {
+    if (elem.parentNode.classList.contains(parentClass)) {
+      return elem.parentNode;
+    }
+    elem = elem.parentNode;
+  }
+  return null;
+}
 
 //navigation
-let nav = document.querySelector('.nav');
-let open = document.querySelector('.hamburger-menu-link');
-let close = document.querySelector('.hamburger-menu-x');
-let htmlObj = document.querySelector('html');
 
-let best = document.querySelector('.best');
-let team = document.querySelector('.team');
-let menu = document.querySelector('.menu');
-let reviews = document.querySelector('.reviews');
-let slider = document.querySelector('.slider');
-let contacts = document.querySelector('.contacts');
+(function() {
+  let open = document.querySelector(".hamburger-menu-link");
+  let close = document.querySelector(".hamburger-menu-x");
 
-let refs = document.querySelectorAll('.nav__link');
-const active = 'active';
-const navActive = 'nav--active';
-let flag = false;
+  open.addEventListener("click", function(event) {
+    event.preventDefault();
+    $("body").addClass("active");
+    $("html").addClass("active");
+    $(".nav").addClass("nav--active");
+    flag = true;
+  });
 
-open.addEventListener('click', function (event) {
-  event.preventDefault();
-  $('body').addClass('active');
-  $('html').addClass('active');
-  $('.nav').addClass('nav--active')
-  flag = true;
-});
-
-close.addEventListener('click', function (event) {
-  event.preventDefault();
-  $('body').removeClass('active');
-  $('html').removeClass('active');
-  $('.nav').removeClass('nav--active')
-  flag = false;
-});
+  close.addEventListener("click", function(event) {
+    event.preventDefault();
+    $("body").removeClass("active");
+    $("html").removeClass("active");
+    $(".nav").removeClass("nav--active");
+    flag = false;
+  });
+})();
 
 // slider
+(function() {
+  let slider__list = document.querySelector(".slider__list");
+  let slider_back = document.querySelector(".slider-back");
+  let slider_forward = document.querySelector(".slider-forward");
+  const step = 20;
+  let currentX = 0;
+  slider__list.style.transform = "translateX(-" + currentX + "%)";
 
-let slider__list = document.querySelector('.slider__list');
-let slider_back = document.querySelector('.slider-back');
-let slider_forward = document.querySelector('.slider-forward');
-const step = 20;
-const maxX = 80;
-const minX = 0;
-let currentX = 0;
-slider__list.style.transform = 'translateX(-' + currentX + '%)';
-
-slider_forward.addEventListener('click', function (event) {
-  console.log(event.srcElement);
-  if (currentX < 80) {
-    currentX += step;
-    slider__list.style.transform = 'translateX(-' + currentX + '%)';
-  } else if (currentX == 80) {
-    currentX = 0;
-    slider__list.style.transform = 'translateX(-' + currentX + '%)';
-  }
-});
-
-slider_back.addEventListener('click', function (event) {
-  console.log(event.srcElement);
-  if (currentX > 0) {
-    currentX -= step;
-    console.log(currentX);
-    slider__list.style.transform = 'translateX(-' + currentX + '%)';
-  } else if (currentX == 0) {
-    currentX = 80;
-    slider__list.style.transform = 'translateX(-' + currentX + '%)';
-  }
-});
-
-
-// reviews
-
-let reviewsParent = document.querySelector('.reviews');
-const tamplate = document.querySelector('#overlayTemplate').innerHTML;
-const overlay = createOverlay(tamplate);
-
-reviewsParent.addEventListener('click', e => {
-  e.preventDefault();
-  console.log(e.target.classList.contains('reviews__ref'));
-  if (e.target.classList.contains('reviews__ref')) {
-    console.log('yes');
-    let reviewContent = closest(e.target, 'reviews__wrap');
-    console.log(reviewContent.childNodes[1].textContent);
-    console.log(reviewContent.childNodes[3].textContent);
-    if (!!reviewContent) {
-      overlay.setContent(reviewContent.childNodes[1].textContent, reviewContent.childNodes[3].textContent);
-      overlay.open();
-    }
-  }
-});
-
-function createOverlay(template) {
-  let fragment = document.createElement('div');
-  fragment.innerHTML = template;
-
-
-  const overlayElement = fragment.querySelector('.overlay');
-  const contentElement = fragment.querySelector('.overlay__text');
-  const contentElementTitle = fragment.querySelector('.overlay__title');
-  const closeElement = fragment.querySelector('.overlay__close');
-
-  fragment = null;
-
-  overlayElement.addEventListener('click', e => {
-    console.log('click');
-    if (e.target.parentNode === overlayElement) {
-      closeElement.click();
-      console.log('click2');
+  slider_forward.addEventListener("click", function(event) {
+    if (currentX < 80) {
+      currentX += step;
+      slider__list.style.transform = "translateX(-" + currentX + "%)";
+    } else if (currentX == 80) {
+      currentX = 0;
+      slider__list.style.transform = "translateX(-" + currentX + "%)";
     }
   });
 
-  closeElement.addEventListener('click', () => {
-    reviewsParent.removeChild(overlayElement);
-  });
-
-  return {
-    open() {
-      reviewsParent.appendChild(overlayElement);
-    },
-    close() {
-      closeElement.click();
-    },
-    setContent(contentTitle, contentText) {
-      contentElement.textContent = contentText;
-      contentElementTitle.textContent = contentTitle;
+  slider_back.addEventListener("click", function(event) {
+    if (currentX > 0) {
+      currentX -= step;
+      slider__list.style.transform = "translateX(-" + currentX + "%)";
+    } else if (currentX == 0) {
+      currentX = 80;
+      slider__list.style.transform = "translateX(-" + currentX + "%)";
     }
-  };
-};
+  });
+})();
 
 //team
-$(function () {
-
-  $('.acco__trigger').on('click', function (e) {
+$(function() {
+  $(".acco__trigger").on("click", function(e) {
     e.preventDefault();
 
     let $this = $(this),
-      liPicked = $this.closest('.acco__item'),
-      acco = $this.closest('.acco'),
-      accoItems = acco.find('.acco__item');
-    activeItem = accoItems.filter('.acco__item--active');
-    if (liPicked.hasClass('acco__item--active')) {
-      liPicked.removeClass('acco__item--active');
+      liPicked = $this.closest(".acco__item"),
+      acco = $this.closest(".acco"),
+      accoItems = acco.find(".acco__item");
+    activeItem = accoItems.filter(".acco__item--active");
+    if (liPicked.hasClass("acco__item--active")) {
+      liPicked.removeClass("acco__item--active");
     } else {
-      liPicked.addClass('acco__item--active');
-      activeItem.removeClass('acco__item--active');
+      liPicked.addClass("acco__item--active");
+      activeItem.removeClass("acco__item--active");
     }
-
-  })
+  });
 });
 
+// menu
+(function() {
+  let activeElem = null;
+  let menuElem = document.querySelectorAll(".menu__list-elem");
 
+  menuElem.forEach((elem, index, arr) => {
+    elem.addEventListener("click", e => {
+      let content = e.currentTarget.getElementsByClassName(
+        "menu__list-content"
+      )[0];
 
+      if (activeElem) {
+        activeElem.style.width = "0";
+      }
+
+      if (activeElem === content) {
+        activeElem = null;
+      } else {
+        content.style.width = "80%";
+        activeElem = content;
+      }
+    });
+  });
+})();
+
+// reviews
+(function() {
+  let reviewsParent = document.querySelector(".reviews");
+  const tamplate = document.querySelector("#overlayTemplate").innerHTML;
+  const overlay = createOverlay(tamplate);
+
+  reviewsParent.addEventListener("click", e => {
+    e.preventDefault();
+
+    if (e.target.classList.contains("reviews__ref")) {
+      let reviewContent = closest(e.target, "reviews__wrap");
+
+      if (!!reviewContent) {
+        overlay.setContent(
+          reviewContent.childNodes[1].textContent,
+          reviewContent.childNodes[3].textContent
+        );
+        overlay.open();
+      }
+    }
+  });
+
+  function createOverlay(template) {
+    let fragment = document.createElement("div");
+    fragment.innerHTML = template;
+
+    const overlayElement = fragment.querySelector(".overlay");
+    const contentElement = fragment.querySelector(".overlay__text");
+    const contentElementTitle = fragment.querySelector(".overlay__title");
+    const closeElement = fragment.querySelector(".overlay__close");
+
+    fragment = null;
+
+    overlayElement.addEventListener("click", e => {
+      if (e.target.parentNode === overlayElement) {
+        closeElement.click();
+      }
+    });
+
+    closeElement.addEventListener("click", () => {
+      reviewsParent.removeChild(overlayElement);
+    });
+
+    return {
+      open() {
+        reviewsParent.appendChild(overlayElement);
+      },
+      close() {
+        closeElement.click();
+      },
+      setContent(contentTitle, contentText) {
+        contentElement.textContent = contentText;
+        contentElementTitle.textContent = contentTitle;
+      }
+    };
+  }
+})();
 
 //one page
 
-const sections = $('.section');
-const display = $('.maincontent');
+const sections = $(".section");
+const display = $(".maincontent");
 let inScroll = false;
 
 const setActiveFixedMenu = itemEq => {
-  $('.fixed-menu__item').eq(itemEq).addClass('fixed-menu__link--active').siblings().removeClass('fixed-menu__link--active');
-}
+  $(".fixed-menu__item")
+    .eq(itemEq)
+    .addClass("fixed-menu__link--active")
+    .siblings()
+    .removeClass("fixed-menu__link--active");
+};
 
 const performTransition = sectionEq => {
   const position = `-${sectionEq * 100}%`;
 
   if (inScroll) return;
   inScroll = true;
-  sections.eq(sectionEq).addClass('section--active').siblings().removeClass('section--active');
+  sections
+    .eq(sectionEq)
+    .addClass("section--active")
+    .siblings()
+    .removeClass("section--active");
   display.css({
     transform: `translateY(${position})`,
-    '-webkit-transform': `translateY(${position})`
+    "-webkit-transform": `translateY(${position})`
   });
 
-  const transitionDuration = parseInt(display.css('transition-duration')) * 1000;
+  const transitionDuration =
+    parseInt(display.css("transition-duration")) * 1000;
   setTimeout(() => {
     inScroll = false;
     setActiveFixedMenu(sectionEq);
-  },
-    transitionDuration + 300)
-
+  }, transitionDuration + 300);
 };
 
 const scrollToSection = direction => {
-  const activeSection = sections.filter('.section--active');
+  const activeSection = sections.filter(".section--active");
   const nextSection = activeSection.next();
   const prevSection = activeSection.prev();
   switch (true) {
-    case direction==='up' && !!prevSection.length :
-     performTransition(prevSection.index());
+    case direction === "up" && !!prevSection.length:
+      performTransition(prevSection.index());
       break;
-    case direction==='down' && !!nextSection.length :
-    performTransition(nextSection.index());
+    case direction === "down" && !!nextSection.length:
+      performTransition(nextSection.index());
       break;
-  };
-
+  }
 };
 
 $(document).on({
-  wheel : e => {
+  wheel: e => {
     const deltaY = e.originalEvent.deltaY;
-    const direction = deltaY > 0 ? 'down' : 'up';
+    const direction = deltaY > 0 ? "down" : "up";
     if (!e.originalEvent.ctrlKey) {
       scrollToSection(direction);
     }
@@ -210,100 +230,112 @@ $(document).on({
     //   console.log(map);
     //  }
   },
-  keydown : e =>{
+  keydown: e => {
     switch (e.keyCode) {
       case 40:
-        scrollToSection('down');
+        scrollToSection("down");
         break;
       case 38:
-        scrollToSection('up');
+        scrollToSection("up");
         break;
-    
+
       default:
         break;
     }
   },
-  touchemove : e =>{
+  touchemove: e => {
     e.preventDefault;
   }
-
 });
 
-$('[data-scroll-to]').on('click', e =>{
+$("[data-scroll-to]").on("click", e => {
   e.preventDefault;
-  const targetScroll =parseInt($(e.currentTarget).data('scroll-to'));
-  console.log(targetScroll);
+  const targetScroll = parseInt($(e.currentTarget).data("scroll-to"));
   performTransition(targetScroll);
-  $('body').removeClass('active');
-  $('html').removeClass('active');
-  $('.nav').removeClass('nav--active')
-})
+  $("body").removeClass("active");
+  $("html").removeClass("active");
+  $(".nav").removeClass("nav--active");
+});
 
-$('.fixed-menu__item').on('click', e =>{
- 
+$(".fixed-menu__item").on("click", e => {
   performTransition($(e.currentTarget).index());
-})
-
+});
 
 let md = new MobileDetect(window.navigator.userAgent);
 if (md.mobile() || md.tablet()) {
-  $(document).swipe( {
+  $(document).swipe({
     //Generic swipe handler for all directions
-    swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
-      swipeDirection = direction==='up'? 'down' : 'up';
+    swipe: function(
+      event,
+      direction,
+      distance,
+      duration,
+      fingerCount,
+      fingerData
+    ) {
+      swipeDirection = direction === "up" ? "down" : "up";
       scrollToSection(swipeDirection);
     }
   });
 }
 
+// Map
 
-function initMap() {
-  // The location of Uluru
-  var uluru = {lat: 59.900128, lng: 30.426957};
-  // The map, centered at Uluru
-  var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 16, center: uluru, gestureHandling: 'cooperative'});
-  // The marker, positioned at Uluru
-  var marker = new google.maps.Marker({position: uluru, map: map});
-}
-
+(function() {
+  function init() {
+    // Создание карты.
+    var myMap = new ymaps.Map("map", {
+      // Координаты центра карты.
+      // Порядок по умолчанию: «широта, долгота».
+      // Чтобы не определять координаты центра карты вручную,
+      // воспользуйтесь инструментом Определение координат.
+      center: [55.76, 37.64],
+      // Уровень масштабирования. Допустимые значения:
+      // от 0 (весь мир) до 19.
+      zoom: 7
+    });
+    myMap.behaviors.disable("scrollZoom");
+  }
+  ymaps.ready(init);
+})();
 
 // AJAX
 
-$('#order-form').on('submit', submitForm);
+$("#order-form").on("submit", submitForm);
 
-function submitForm (ev) {
-    ev.preventDefault();
-    
-    var form = $(ev.target),
-        data = form.serialize(),
-        url = form.attr('action'),
-        type = form.attr('method');
+function submitForm(ev) {
+  ev.preventDefault();
 
-    ajaxForm(form).done(function(msg) {
-        var mes = msg.mes,
-            status = msg.status;
-        
-        if (status === 'OK') {
-            console.log('<p class="success">' + mes + '</p>');
-        } else{
-          console.log('<p class="error">' + mes + '</p>');
-        }
-    }).fail(function(jqXHR, textStatus) {
-        alert("Request failed: " + textStatus);
+  var form = $(ev.target),
+    data = form.serialize(),
+    url = form.attr("action"),
+    type = form.attr("method");
+
+  ajaxForm(form)
+    .done(function(msg) {
+      var mes = msg.mes,
+        status = msg.status;
+
+      if (status === "OK") {
+        console.log('<p class="success">' + mes + "</p>");
+      } else {
+        console.log('<p class="error">' + mes + "</p>");
+      }
+    })
+    .fail(function(jqXHR, textStatus) {
+      alert("Request failed: " + textStatus);
     });
-
-};
+}
 
 // Универсальная функция для работы с формами
-var ajaxForm = function (form) {
-    var data = form.serialize(),
-        url = form.attr('action');
-    
-    return $.ajax({
-        type: type,
-        url: url,
-        dataType : 'JSON',
-        data: data
-    })
+var ajaxForm = function(form) {
+  var data = form.serialize(),
+    url = form.attr("action");
+
+  return $.ajax({
+    type: type,
+    url: url,
+    dataType: "JSON",
+    data: data
+  });
 };
