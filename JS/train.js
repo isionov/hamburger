@@ -167,117 +167,103 @@ $(function() {
 
 //one page
 
-const sections = $(".section");
-const display = $(".maincontent");
-let inScroll = false;
+(function() {
+  const sections = $(".section");
+  const display = $(".maincontent");
+  let inScroll = false;
 
-const setActiveFixedMenu = itemEq => {
-  $(".fixed-menu__item")
-    .eq(itemEq)
-    .addClass("fixed-menu__link--active")
-    .siblings()
-    .removeClass("fixed-menu__link--active");
-};
+  const setActiveFixedMenu = itemEq => {
+    $(".fixed-menu__item")
+      .eq(itemEq)
+      .addClass("fixed-menu__link--active")
+      .siblings()
+      .removeClass("fixed-menu__link--active");
+  };
 
-const performTransition = sectionEq => {
-  const position = `-${sectionEq * 100}vh`;
+  const performTransition = function(sectionEq) {
+    setTimeout(() => {
+      sections[sectionEq].scrollIntoView({ behavior: "smooth" });
+    }, 0);
 
-  if (inScroll) return;
-  inScroll = true;
-  sections
-    .eq(sectionEq)
-    .addClass("section--active")
-    .siblings()
-    .removeClass("section--active");
-  display.css({
-    transform: `translateY(${position})`,
-    "-webkit-transform": `translateY(${position})`
-  });
-
-  const transitionDuration =
-    parseInt(display.css("transition-duration")) * 1000;
-  setTimeout(() => {
-    inScroll = false;
     setActiveFixedMenu(sectionEq);
-  }, transitionDuration + 300);
-};
+    sections
+      .eq(sectionEq)
+      .addClass("section--active")
+      .siblings()
+      .removeClass("section--active");
+  };
 
-const scrollToSection = direction => {
-  const activeSection = sections.filter(".section--active");
-  const nextSection = activeSection.next();
-  const prevSection = activeSection.prev();
-  switch (true) {
-    case direction === "up" && !!prevSection.length:
-      performTransition(prevSection.index());
-      break;
-    case direction === "down" && !!nextSection.length:
-      performTransition(nextSection.index());
-      break;
-  }
-};
-
-$(document).on({
-  wheel: e => {
-    const deltaY = e.originalEvent.deltaY;
-    const direction = deltaY > 0 ? "down" : "up";
-    if (!e.originalEvent.ctrlKey) {
-      scrollToSection(direction);
-    }
-
-    // if (!!e.originalEvent.target.closest('.contacts__content')) {
-    //   console.log('set Options');
-    //   map.setOptions({scrollwheel: false});
-    //   console.log(map);
-    //  }
-  },
-  keydown: e => {
-    switch (e.keyCode) {
-      case 40:
-        scrollToSection("down");
+  const scrollToSection = direction => {
+    const activeSection = sections.filter(".section--active");
+    const nextSection = activeSection.next();
+    const prevSection = activeSection.prev();
+    switch (true) {
+      case direction === "up" && !!prevSection.length:
+        performTransition(prevSection.index());
         break;
-      case 38:
-        scrollToSection("up");
-        break;
-
-      default:
+      case direction === "down" && !!nextSection.length:
+        performTransition(nextSection.index());
         break;
     }
-  },
-  touchemove: e => {
-    e.preventDefault;
-  }
-});
+  };
 
-$("[data-scroll-to]").on("click", e => {
-  e.preventDefault;
-  const targetScroll = parseInt($(e.currentTarget).data("scroll-to"));
-  performTransition(targetScroll);
-  $("body").removeClass("active");
-  $("html").removeClass("active");
-  $(".nav").removeClass("nav--active");
-});
+  $(document).on({
+    wheel: e => {
+      const deltaY = e.originalEvent.deltaY;
+      const direction = deltaY > 0 ? "down" : "up";
+      if (!e.originalEvent.ctrlKey) {
+        scrollToSection(direction);
+      }
+    },
+    keydown: e => {
+      switch (e.keyCode) {
+        case 40:
+          scrollToSection("down");
+          break;
+        case 38:
+          scrollToSection("up");
+          break;
 
-$(".fixed-menu__item").on("click", e => {
-  performTransition($(e.currentTarget).index());
-});
-
-let md = new MobileDetect(window.navigator.userAgent);
-if (md.mobile() || md.tablet()) {
-  $(document).swipe({
-    //Generic swipe handler for all directions
-    swipe: function(
-      event,
-      direction,
-      distance,
-      duration,
-      fingerCount,
-      fingerData
-    ) {
-      swipeDirection = direction === "up" ? "down" : "up";
-      scrollToSection(swipeDirection);
+        default:
+          break;
+      }
+    },
+    touchemove: e => {
+      e.preventDefault;
     }
   });
-}
+
+  $("[data-scroll-to]").on("click", e => {
+    e.preventDefault;
+    const targetScroll = parseInt($(e.currentTarget).data("scroll-to"));
+    performTransition(targetScroll);
+    $("body").removeClass("active");
+    $("html").removeClass("active");
+    $(".nav").removeClass("nav--active");
+  });
+
+  $(".fixed-menu__item").on("click", e => {
+    performTransition($(e.currentTarget).index());
+  });
+
+  let md = new MobileDetect(window.navigator.userAgent);
+  if (md.mobile() || md.tablet()) {
+    $(document).swipe({
+      //Generic swipe handler for all directions
+      swipe: function(
+        event,
+        direction,
+        distance,
+        duration,
+        fingerCount,
+        fingerData
+      ) {
+        swipeDirection = direction === "up" ? "down" : "up";
+        scrollToSection(swipeDirection);
+      }
+    });
+  }
+})();
 
 // Map
 
