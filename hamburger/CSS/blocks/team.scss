@@ -1,0 +1,116 @@
+.team{
+  background: url("../img/bg/bg_team.jpg") center top / cover no-repeat;
+  position: relative;
+}
+
+.team__container{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  background-color: rgba($color: #2f3234, $alpha: 0.93);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  
+  @include tablets{
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.acco{
+  width: rem(350px);
+}
+
+.acco__item{
+  margin-bottom: rem(45px);
+}
+
+.acco__trigger{
+  display: flex;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  // margin-bottom: rem(10px);
+  font-size: rem(14px);
+  @include gagalin();
+
+  &:before{
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: rem(5px) solid transparent;
+    border-top-color: $yellow;
+    border-bottom-width: 0;
+    margin-right: rem(10px);
+  }
+  @include tablets{
+    display: inline-flex;
+  }
+}
+
+.acco__desc{
+  color: #fff;
+  font-size: rem(14px);
+  margin-left: rem(20px);
+  @include tablets{
+    margin-left: 0;
+  }
+}
+
+.acco__desk-title{
+  @include ubuntu(bold);
+  margin-bottom: rem(10px);
+}
+.acco__desk-text{
+  @include ubuntu(light);
+}
+
+.acco__content{
+  height: 0;
+  overflow: hidden;
+  width: rem(350px);
+  display: flex;
+  padding-top: rem(10px);
+  padding-left: rem(41px);
+
+  @include tablets {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.acco__pic{
+  height: rem(100px);
+  width: rem(100px);
+  border-radius: 50%;
+  overflow: hidden;
+  flex-basis: 100%;
+  max-width: rem(100px);
+  display: flex;
+  justify-content: center;
+   img{
+    //width: rem(100px);
+    height: rem(100px);
+  }
+}
+
+.acco__item--active{
+  .acco__trigger{
+    color: $yellow;
+    &:before{
+      transform: rotate(180deg);
+    }
+  }
+
+  .acco__content{
+    height: auto;
+    margin-bottom: rem(10px);
+  }
+}

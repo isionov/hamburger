@@ -1,0 +1,37 @@
+// prepros atoprefixer: last 5 version, > 1%, ie 10, ie 11, Opera 12.1, FireFox ESR
+
+//colors
+$orange: #e45028;
+$yellow: #f9b43b;
+$black: #2f3234;
+
+//breakpoints
+$tablets: 786px;
+$phones: 480px;
+
+//normalize
+@import "_misc/normalize.scss";
+
+
+//setup
+@import "_misc/media.scss";
+@import "_misc/fonts.scss";
+@import "_misc/mixins.scss";
+@import "_misc/layout.scss";
+
+//blocks
+@import "blocks/hero.scss";
+@import "blocks/nav.scss";
+@import "blocks/btn.scss";
+@import "blocks/section__title.scss";
+@import "blocks/best.scss";
+@import "blocks/team.scss";
+@import "blocks/menu.scss";
+@import "blocks/reviews.scss";
+@import "blocks/order.scss";
+@import "blocks/radio.scss";
+@import "blocks/check.scss";
+@import "blocks/contacts.scss";
+@import "blocks/footer.scss";
+@import "blocks/fixed_menu.scss";
+@import "blocks/slider.scss";

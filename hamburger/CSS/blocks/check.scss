@@ -1,0 +1,35 @@
+.check__elem{
+  display: none;
+    &:checked + .check__custom {
+    .check__custom-svg{
+      fill: $orange;
+    }
+  }
+}
+
+.check__custom{
+  width: rem(18px);
+  height: rem(18px);
+  position: relative;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: rem(10px);
+}
+
+.check__custom-svg{
+  fill: transparent;
+  width: 90%;
+  height: 90%;
+}
+
+.check__text {
+	display: flex;
+}
+
+.check{
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
+}

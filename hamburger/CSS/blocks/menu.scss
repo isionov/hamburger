@@ -1,0 +1,112 @@
+.menu{
+  background: url('../img/bg/bg_menu.jpg') center center / cover no-repeat;
+  position: relative;
+}
+
+.container--menu{
+  flex-direction: row;
+  justify-content: space-between;
+  position: static;
+}
+
+.section__title--menu{
+  color: #fff;
+  // padding-top: rem(85px);
+  // padding-left: rem(20px);
+  padding-top: 6%;
+  padding-left: 6%;
+
+}
+
+.menu__list{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  overflow: hidden;
+  width: rem(560px);
+  justify-content: flex-end;
+  @include tablets{
+    width: 100%;
+  }
+  @include phones{
+    width: 100%;
+    justify-content: flex-end;
+  }
+  
+  &-elem{
+    display: flex;
+    &--active{
+      @include phones{
+        position: absolute;
+        height: 100%;
+        z-index: 30;
+      }
+      .menu__list-content{
+        width: 100%;
+      }
+      .menu__list-title{
+        color: $yellow;
+      }
+    }
+  }
+}
+
+.menu__list-title{
+  @include gagalin();
+  font-size: rem(40px);
+  line-height: 2;
+  color: #fff;
+  text-transform: uppercase;
+  position: relative;
+  width: rem(80px);
+  white-space: nowrap;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  & span{
+    position: absolute;
+    left: 0;
+    bottom: rem(-44px);
+    transform: rotateZ(-90deg);
+    transform-origin: 0 0;
+  }
+}
+
+.menu__list-content{
+  background: rgba($color: #2f3234, $alpha: 0.93);
+  color: #fff;
+  font-size: rem(14px);
+  @include ubuntu(light);
+  // max-width: rem(540px);
+  text-align: left;
+  width: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  p{
+    display: inline-block;
+    width: 80%;
+    padding-top: 15%;
+    line-height: 1.71;
+  }
+}
+
+.menu__list-title{
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center center;
+}
+
+// .menu__list-title--meat{
+//   background: center center / cover no-repeat;
+// }
+// .menu__list-title--veg{
+//   background: url('../img/bg/bg_vegMenu.png') center center / cover no-repeat;
+// }
+// .menu__list-title--diet{
+//   background: url('../img/bg/bg_dietMenu.png') center center / cover no-repeat;
+// }

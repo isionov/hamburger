@@ -1,0 +1,138 @@
+.hero{
+  background: url("../img/bg/bg1.jpg") center center / cover no-repeat;
+}
+
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: rem(6px);
+}
+
+.hero__container{
+  flex: 0.9;
+  align-items: center;
+  display: flex;
+}
+
+.hero__inner-container{
+  justify-content: flex-start;
+}
+.hero__content{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  @include tablets {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.hero__content-pic{
+  text-align: center;
+}
+
+.hero__content-text{
+  align-self: center;
+  width: 55%;
+  margin-left: rem(30px);
+  @include tablets{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+  @include phones{
+    width: 100%;
+  }
+}
+.hero__burger{
+  max-width: 95%;
+  display: inline-block;
+}
+
+.hero__content-desc{
+  @include lifehack();
+  font-size: rem(65px);
+  color: #fff;
+  max-width: 90%;
+  display: inline-block;
+  line-height: 1;
+  @include phones{
+    font-size: rem(50px);
+  }
+}
+
+.header__links{
+  display: flex;
+  align-items: center;
+  // margin-left: rem(10px);
+}
+
+.hamburger-menu-link{
+  display: none;
+  margin-left: rem(25px);
+  align-items: center;
+  position: relative;
+  height: rem(16px);
+  @include tablets {
+    display: flex;
+  }
+}
+
+.hamburger-menu-x{
+  & svg{
+    width: rem(20px);
+    height: rem(20px);
+  }
+  position: fixed;
+  right: rem(35px);
+  top: rem(35px);
+  display: none;
+  z-index: 110;
+}
+
+.hamburger-menu-link__bars{
+  background: #fff;
+  width: rem(24px);
+  height: rem(3px);
+  &:before{
+    content: "";
+    display: block;
+    background: #fff;
+    width: rem(24px);
+    height: rem(3px);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  &:after{
+    content: "";
+    display: block;
+    background: #fff;
+    width: rem(24px);
+    height: rem(3px);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.nav--active{
+  
+  .btn, .hamburger-menu-link{
+    display: none;
+  }
+
+  .hamburger-menu-x{
+    display: block;
+  }
+
+  .nav__list{
+    transform: translateX(0);
+    overflow: hidden;
+    margin-right: 0;
+  }
+
+}

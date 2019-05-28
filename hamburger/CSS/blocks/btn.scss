@@ -1,0 +1,14 @@
+.btn{
+  padding: rem(8px) rem(15px);
+  background-color: $orange;
+  display: block;
+  border-radius: rem(5px);
+  text-decoration: none;
+  color: #fff;
+  @include ubuntu(medium);
+  font-size: rem(13px);
+  text-transform: uppercase;
+  &:hover{
+    background-color: darken($color: $orange, $amount: 10%);
+  }
+}

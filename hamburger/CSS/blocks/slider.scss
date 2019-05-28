@@ -1,0 +1,267 @@
+.slider{
+  background: linear-gradient(to bottom, #f9b43b, #eb8c38,#f9b43b);
+  position: relative;
+}
+
+.slider__wrap{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
+.slider__list{
+  display: flex;
+  flex-shrink: 0;
+  width: 500%;
+  transform: translateX(0%);
+}
+
+.slider__elem{
+  position: relative;
+  display: flex;
+  width: 20%;
+  justify-content: center;
+}
+.slider-back{
+  position: absolute;
+  top: 50%;
+  left: rem(-5px);
+  transform: translateY(-50%);
+  transform: rotate(90deg);
+  transform-origin: center;
+  z-index: 30;
+  cursor: pointer;
+  & svg{
+    width: rem(28px);
+    height: rem(14px);
+  }
+}
+.slider-forward{
+  position: absolute;
+  top: 50%;
+  right: rem(-5px);
+  transform: translateY(-50%);
+  transform: rotate(-90deg);
+  transform-origin: center;
+  z-index: 30;
+  cursor: pointer;
+  & svg{
+    width: rem(28px);
+    height: rem(14px);
+  }
+}
+
+.composition{
+  position: absolute;
+  top: 12%;
+  left: 0;
+  width: rem(90px);
+  height: rem(90px);
+  background-color: #f08c33;
+  cursor: pointer;
+  &:hover{
+    background-color: darken($color: #f08c33, $amount: 10);
+    .composition__describe{
+      width: rem(270px);
+      @include phones{
+        width: rem(200px);     
+      }
+    }
+  }
+  // & svg{
+  //   width: 50%;
+  //   height: 50%;
+  // }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+
+}
+
+.composition__img{
+  width: 50%;
+  height: 50%;
+}
+
+.composition__text{
+@include gagalin();
+font-size: rem(14px);
+color: #fff;
+margin-top: rem(5px);
+}
+.energy{
+  position: absolute;
+  bottom: 20%;
+  left: 0;
+  width: rem(80px);
+  height: rem(80px);
+  text-align: center;
+  color: #fff;
+  @include gagalin();
+  font-size: rem(20px);
+  @include tablets{
+    right: 0;
+    left: auto;
+    top: 12%;
+    bottom: auto;
+  }
+}
+
+.energy_pic{
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  & svg{
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.energy__val{
+  margin-top: 44%;
+}
+
+.energy__dimension{
+  font-size: rem(14px);
+}
+
+.slider_content{
+  display: flex;
+  width: 95%;
+  @include tablets{
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.slider_content__burger{
+  flex-basis: 55%;
+  // display: flex;
+  align-items: center;
+  display: flex;
+  @include tablets{
+    display: flex;
+    justify-content: center;
+    flex-basis: 35%;
+    width: 45%;
+  }
+}
+
+.slider_content__burger-pic{
+  width: 100%;
+  @include tablets{
+    // width: auto;
+    // height: 100%;
+    // width: unset;
+    align-self: flex-end;
+    max-width: fit-content;
+    max-height: fit-content;
+  }
+}
+
+.slider_content__text{
+  flex-basis: 45%;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @include tablets{
+    text-align: center;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: rem(10px);
+    flex-basis: auto;
+  }
+}
+
+.slider_content__text-title{
+  @include gagalin();
+  font-size: rem(72px);
+  line-height: 1.0;
+  @include tablets{
+    width: 100%;
+  }
+  @include phones{
+    font-size: rem(50px);
+  }
+}
+
+.slider_content__text-descript{
+  @include ubuntu(light);
+  font-size: rem(14px);
+  line-height: rem(24px);
+  @include tablets{
+    margin-top: rem(40px);
+  }
+}
+
+.slider_content__text-order{
+  display: flex;
+  align-items: baseline;
+  @include tablets{
+    justify-content: center;
+    margin-top: rem(20px);
+  }
+}
+
+.slider_content__text-price{
+  @include gagalin();
+  font-size: rem(30px);
+  color: $orange;
+  & span{
+    font-size: rem(72px);
+  }
+}
+
+.slider-btn-margin-left{
+  margin-left: rem(25px);
+}
+
+.composition__describe{
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 0;
+  overflow: hidden;
+}
+.composition__describe-bg{
+  background-color: #fff;
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 5px;
+}
+.composition__describe-elem{
+  display: flex;
+
+  align-items: center;
+  justify-content: space-around;
+  z-index: 20;
+  padding-top: 5px;
+  padding: 5px;
+}
+
+.composition__describe-img{
+  height: rem(50px);
+  width: rem(50px);
+  z-index: 20;
+}
+.composition__describe-component{
+  z-index: 20;
+  flex-basis: 40%;
+}
+.composition__describe-weight{
+  z-index: 20;
+}

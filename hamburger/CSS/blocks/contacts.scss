@@ -1,0 +1,15 @@
+.contacts__content{
+  height: 100%;
+  &::after{
+    display: block;
+    content: '';
+    height: rem(60px);
+  }
+}
+
+.contacts{
+  position: relative;
+  // background: url("../img/bg/bg_contacts.jpg") center center / cover no-repeat;
+  display: flex;
+  flex-direction: column;
+}

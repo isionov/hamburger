@@ -1,0 +1,168 @@
+.reviews{
+  position: relative;
+}
+
+.reviews__list{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.reviews__item{
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 50%;
+  width: 25%;
+  position: relative;
+  &:hover{
+    .reviews__hover{
+      opacity: 1;
+    }
+  }
+
+  @include tablets{
+    height: 25%;
+    width: 50%;
+    text-align: center;
+  }
+}
+
+.reviews__hover{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba($color: #000000, $alpha: 0.5);
+  opacity: 0;
+  transition: .3s;
+  font-size: rem(14px);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reviews__wrap{
+  width: 85%;
+  height: 100%;
+  @include phones{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.reviews__title{
+  @include gagalin();
+  padding-top: rem(45px);
+  text-transform: uppercase;
+
+  @include tablets{
+    padding-top: 2%;
+  }
+  @include phones{
+    font-size: 24px;
+  }
+}
+
+.reviews__text{
+  @include ubuntu(300);
+  padding-top: rem(20px);
+  
+  overflow: hidden;
+  line-height: 1.7;
+  font-size: rem(14px);
+  max-height: 1.7*6.5em;
+
+  @include tablets{
+    padding-top: 2%;
+    max-height: 1.7*3em;
+  }
+  
+  @include phones{
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+  }
+
+}
+
+.reviews__ref{
+  @include ubuntu(500);
+  text-decoration: none;
+  color: #fff;
+  display: inline-block;
+  padding: rem(10px) rem(12px);
+  background-color: #1f2122;
+  border-radius: rem(5px);
+  text-transform: uppercase;
+  margin-top: rem(15px);
+
+  @include tablets{
+    padding: rem(5px) rem(7.5px);
+    margin-top: 2%;
+  }
+  @include phones{
+    padding: rem(5px) rem(7.5px);
+    margin-top: 6%;
+  }
+}
+
+.overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+}
+.overlay__bg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #2f3234;
+  opacity: .93;
+}
+.overlay__content{
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+  width: rem(475px);
+  height: rem(255px);
+  padding: rem(22px);
+  border-radius: 5px;
+  @include phones{
+    width: 100%;
+  }
+}
+
+.overlay__close{
+position: absolute;
+top: 0px;
+right: 8px;
+color: #ec8468;
+cursor: pointer;
+font-size: rem(20px);
+}
+
+.overlay__title{
+  max-height: 1.7*1em;
+  line-height: 1.7;
+  overflow: hidden;
+  text-transform: uppercase;
+}
+.overlay__text{
+  max-height: 1.7*7em;
+  line-height: 1.7;
+  overflow: hidden;
+}

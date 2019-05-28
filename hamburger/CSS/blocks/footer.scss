@@ -1,0 +1,107 @@
+.footer {
+  min-height: 5.5rem;
+  width: 100%;
+  z-index: 1000;
+  position: absolute;
+  bottom: 0;
+  font-size: rem(14px);
+  @include ubuntu(light);
+  color: #fff;
+  background: url(../img/bg/bg_footer.jpg) center center / cover no-repeat;
+  opacity: 0.9;
+}
+
+.footer__elem {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.adr {
+  width: 100%;
+  @include phones {
+    margin-bottom: rem(3px);
+    padding-top: rem(10px);
+  }
+}
+
+.adr-pic {
+  width: rem(11px);
+  height: rem(11px);
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  align-self: center;
+}
+.adr-pic-svg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.adr-tel {
+  text-decoration: none;
+  color: $orange;
+  @include ubuntu(bold);
+  display: inline-block;
+  align-self: center;
+  margin-left: rem(10px);
+}
+
+.soc {
+  width: rem(20px);
+  height: rem(20px);
+  display: inline-block;
+  margin-right: rem(20px);
+  &:last-child {
+    margin-right: rem(0px);
+  }
+  &:hover .soc-svg {
+    fill: #fff;
+  }
+  &:hover {
+    background: transparent;
+  }
+}
+
+.soc-svg {
+  width: 100%;
+  height: 100%;
+  fill: #585858;
+}
+
+.footer__wrap {
+  display: flex;
+  min-height: rem(60px);
+  @include phones {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+.footer__elem--text-align {
+  justify-content: flex-end;
+  align-items: center;
+  @include phones {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.footer__elem {
+  @include phones {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    margin-bottom: rem(10px);
+  }
+}
