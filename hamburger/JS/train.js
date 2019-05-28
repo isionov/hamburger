@@ -169,6 +169,8 @@ $(function() {
 
 (function() {
   const sections = $(".section");
+  let inScroll = false;
+  const display = $(".maincontent");
 
   const setActiveFixedMenu = itemEq => {
     $(".fixed-menu__item")
@@ -178,17 +180,32 @@ $(function() {
       .removeClass("fixed-menu__link--active");
   };
 
-  const performTransition = function(sectionEq) {
-    setTimeout(() => {
-      sections[sectionEq].scrollIntoView({ behavior: "smooth" });
-    }, 0);
-
-    setActiveFixedMenu(sectionEq);
+  const performTransition = sectionEq => {
+    let position = `-${sectionEq * 100}%`;
+    console.log(position, document.documentElement.clientHeight);
+    if (document.documentElement.clientHeight < 650) {
+      position = `-${sectionEq * 100}%`;
+    } else {
+      position = `-${sectionEq * 100}vh`;
+    }
+    if (inScroll) return;
+    inScroll = true;
     sections
       .eq(sectionEq)
       .addClass("section--active")
       .siblings()
       .removeClass("section--active");
+    display.css({
+      transform: `translateY(${position})`,
+      "-webkit-transform": `translateY(${position})`
+    });
+
+    const transitionDuration =
+      parseInt(display.css("transition-duration")) * 1000;
+    setTimeout(() => {
+      inScroll = false;
+      setActiveFixedMenu(sectionEq);
+    }, transitionDuration + 300);
   };
 
   const scrollToSection = direction => {
