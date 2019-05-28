@@ -182,7 +182,6 @@ $(function() {
 
   const performTransition = sectionEq => {
     let position = `-${sectionEq * 100}%`;
-    console.log(position, document.documentElement.clientHeight);
     if (document.documentElement.clientHeight < 650) {
       position = `-${sectionEq * 100}%`;
     } else {
